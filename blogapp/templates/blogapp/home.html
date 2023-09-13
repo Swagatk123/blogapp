@@ -1,0 +1,29 @@
+{% extends 'blogapp/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+ <div class="col-sm-10">
+    <h3 class="text-white my-5">Home Page</h3>
+    {% for post in posts %}
+    <div class="card card-color my-5" style="background-color:rgb(83, 81, 81);">
+      <div class="card-header text-white ">
+        Post No. {{post.id}}
+      </div>
+      <div class="card-body text-white ">
+        <blockquote class="blockquote mb-2">
+          <h1 class="mb-3 ">{{post.title}}</h1>
+          <p>{{post.desc}}</p>
+        </blockquote>
+      </div><br><br>
+      
+    </div>
+    {% endfor %}
+    {% comment %} <div class="jumbotron jumbotron-fluid" style="background-color:rgb(83, 81, 81);">
+      <div class="container ">
+        <h1 class="display-4">This is Blog Title</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati veniam, eos neque necessitatibus libero rem repellendus voluptas ab voluptatum dolor!.</p>
+      </div>
+    </div> {% endcomment %}
+ </div>
+{% endblock content %}
+ 
